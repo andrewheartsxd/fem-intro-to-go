@@ -2,13 +2,13 @@ package main
 
 import "fmt"
 
-func main() {
-	var name string
-	var namePointer *string
+// func main() {
+// 	var name string
+// 	var namePointer *string
 
-	fmt.Println("Name:", name)
-	fmt.Println("Name *:", namePointer)
-}
+// 	fmt.Println("Name:", name)
+// 	fmt.Println("Name *:", namePointer)
+// }
 
 // // ******************************************************
 
@@ -36,3 +36,15 @@ func main() {
 // }
 
 // // ******************************************************
+
+type Coordinates struct {
+	X, Y float64
+}
+
+var c = Coordinates{X: 10, Y: 20}
+
+func main() {
+	coordinatesMemoryAddress := c
+	coordinatesMemoryAddress.X = 200
+	fmt.Println(coordinatesMemoryAddress)
+}
